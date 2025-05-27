@@ -1,5 +1,5 @@
 import streamlit as st
-from utils import extract_transcript_details, generate_gemini_content, prompt
+from utils import extract_transcript_details, generate_localai_content, prompt
 
 st.set_page_config(page_title="YouTube Video Summarizer")
 
@@ -14,6 +14,6 @@ if st.button('Get Summary'):
     transcript_text = extract_transcript_details(youtube_link)
 
     if transcript_text:
-        summary = generate_gemini_content(transcript_text, prompt)
+        summary = generate_localai_content(transcript_text, prompt)
         st.markdown('Here is the video summary')
         st.write(summary)
